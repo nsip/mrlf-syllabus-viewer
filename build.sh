@@ -12,7 +12,7 @@ build_mac64() {
     echo "Creating zip archive..."
     cd $CWD/build
     cd Mac
-    zip -qr ../syllabus-viewer-Mac.zip .
+    zip -qr ../mrlf-syllabus-viewer-Mac.zip .
     echo "Zip archive created"
     cd ..
 
@@ -30,7 +30,7 @@ build_windows64() {
     echo "Creating zip archive..."
     cd $CWD/build
     cd Win64
-    zip -qr ../syllabus-viewer-Win64.zip .
+    zip -qr ../mrlf-syllabus-viewer-Win64.zip .
     echo "Zip archive created"
     cd ..
 
@@ -48,7 +48,7 @@ build_linux64() {
     echo "Creating zip archive..."
     cd $CWD/build
     cd Linux64
-    zip -qr ../syllabus-viewer-Linux64.zip .
+    zip -qr ../mrlf-syllabus-viewer-Linux64.zip .
     echo "Zip archive created"
     cd ..
 
@@ -69,15 +69,15 @@ build_all() {
     cd $CWD/build
 
     cd Mac
-    zip -qr ../syllabus-viewer-Mac.zip .
+    zip -qr ../mrlf-syllabus-viewer-Mac.zip .
     cd ..
 
     cd Win64
-    zip -qr ../syllabus-viewer-Win64.zip .
+    zip -qr ../mrlf-syllabus-viewer-Win64.zip .
     cd ..
 
     cd Linux64
-    zip -qr ../syllabus-viewer-Linux64.zip .
+    zip -qr ../mrlf-syllabus-viewer-Linux64.zip .
     cd ..
 
     echo "Zip archives created"
