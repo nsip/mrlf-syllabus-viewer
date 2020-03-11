@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>[{{ .FM.RootName }}]::Audit View</title>
+    <meta name="description" content="auto-generated curriculum audit data-view">
+    <meta name="author" content="nsip">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- google text fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Karla|PT+Sans+Narrow&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="/{{ .FM.CssPath }}audit.css" media="screen,projection" />
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--  -->
+    <!--  -->
+    <!-- external javascript dependencies -->
+    <!--  -->
+    <!-- jquery support -->
+    <!--  -->
+    <script type="text/javascript" src="/{{ .FM.JsPath }}jquery-3.3.1.min.js"></script>
+    <!--  -->
+    <!-- katex maths renderer -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+    <!-- math/tex content interpreter from katex - khan academy maths/latex renderer -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mathtex-script-type.min.js" integrity="sha384-LJ2FmexL77rmGm6SIpxq7y+XA6bkLzGZEgCywzKOZG/ws4va9fUVu2neMjvc3zdv" crossorigin="anonymous"></script>
+    <!--  -->
+    <!--  -->
+</head>
+
+<body>
+    <!--  -->
+    <!-- display style toggles -->
+    <!--  -->
+    <div id="banner">
+        <div>
+            <input id="cbx-borders" type="checkbox" name="cbx-borders">
+            <label for="cbx-borders">relationships</label>
+        </div>
+        <div>
+            <input id="cbx-colours" type="checkbox" name="cbx-colours">
+            <label for="cbx-colours">colours</label>
+        </div>
+    </div>
+    <!--  -->
+    <!-- main content -->
+    <!--  -->
+    <main class="container">
+        {{- define "recursive"}}
+            {{- if isArray .}}
+                <ul class='array'>
+                    {{- range $element := .}}
+                    {{- template "recursive" $element}}
+                    {{- end}}
+                </ul>
+            {{- else if isObject .}}
+                {{- range $key, $value := .}}
+                {{- if isLeaf $value}}
+                    <li class="leaf">
+                        <span class='key'>{{$key}}: </span>
+                        <span class='value'>{{$value}}</span>
+                    </li>
+                {{- else}}
+                    <ul class="object">
+                        <li class="node"><h4><span class='key'>{{$key}}:</span></h4></li>
+                    <!-- <ul class="object"> -->
+                        {{template "recursive" $value}}
+                    </ul>
+                {{- end}}
+            {{- end}}
+            {{- else}}
+                <li class="leaf"><span class='value'>{{ . }}</span></li>
+            {{- end}}
+        {{- end}}
+        {{- template "recursive" .JSON }}
+    </main>
+</body>
+<!-- page-specific javascript -->
+<script type="text/javascript" src="/{{ .FM.JsPath }}audit.js"></script>
+<script>
+</script>
+
+</html>

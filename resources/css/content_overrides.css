@@ -1,0 +1,124 @@
+
+
+main {
+    margin: 3em auto 6em auto;
+    max-width: 900px;
+    line-height: 1.6em;
+}
+
+
+/*
+syllabus name
+*/
+.container > .asn_statementNotation > .literal { 
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    font-weight: bold;
+    font-size: 2.5em; 
+}
+
+/*
+stage headings
+*/
+.container > .children > .children > .dcterms_title > .literal {
+    display: block;
+    font-size: 2.35em; 
+}
+
+/*
+stage content-groups
+*/
+.container > .children > .children > .children > .dcterms_title > .literal {
+    display: block;
+    font-style: italic;
+    font-size: 1.15em; 
+    padding: 10px;
+}
+
+/*
+content-group coverage text
+*/
+.container > .children > .children > .children > .dcterms_coverage > .literal {
+    display: block;
+    font-style: italic;
+    font-size: 1.15em; 
+    padding: 10px;
+}
+
+/*
+content-group item description
+*/
+.container > .children > .children > .children > .children > .dcterms_description > .literal {
+    display: block;
+    /*font-style: italic;*/
+    font-weight: bold;
+    font-size: 1.15em; 
+    padding: 10px;
+}
+
+/*
+content-group sub- item description
+*/
+.container > .children > .children > .children > .children > .children > .dcterms_description > .literal {
+    display: block;
+    /*font-style: italic;*/
+    font-size: 1.35em; 
+    padding: 10px;
+}
+
+/*
+content-group sub-sub item description
+*/
+.container > .children > .children > .children > .children > .children > .children > .dcterms_description > .literal {
+    display: block;
+    font-style: italic;
+    font-size: 1.25em; 
+    padding: 10px;
+}
+
+
+/*
+outcome text
+*/
+.children > .objectives > .children > .text { 
+    display: inline;
+    padding-bottom: 2px;
+    padding-left: 20px;
+    /*margin-left: 10px;*/
+}
+
+/*
+is a para in nesa json, so added prcessing
+*/
+.children > .objectives > .children > .text p { 
+    display: inline;
+    margin-left: 5px;
+}
+
+/*
+give each outcome a label
+*/
+.children > .objectives > .children > .text:before { 
+    content: 'Outcome: ';
+    font-style: italic;
+}
+
+/*
+the text description of the objective
+*/
+.children > .objectives > .dcterms_title > .literal { 
+    display: block;
+    /*padding: 10px;*/
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: bold;
+    font-size: 1.3em; 
+}
+
+/*
+give it a label
+*/
+.children > .objectives > .dcterms_title > .literal:before { 
+    content: 'Description: ';   
+}

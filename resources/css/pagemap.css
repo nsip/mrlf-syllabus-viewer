@@ -1,0 +1,52 @@
+/*pagemap.css*/
+
+#map {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 100%;
+    z-index: 100;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /*font-family: Ubuntu, sans;*/
+    font-family: 'Roboto', sans;
+    font-size: 16px;
+    color: #555;
+}
+
+
+a, a:visited, a:active {
+    color: #1d77c2;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #555;
+}
+
+
+h1 {
+    font-size: 3em;
+    font-weight: normal;
+    margin: 0 0 1em;
+}
+
+h2 {
+    font-size: 1.8em;
+    font-weight: normal;
+    margin: 3em 0 1em;
+}
+
+h3 {
+    font-size: 1.2em;
+    /*font-weight: bold;*/
+    margin: 2em 0 1em;
+}
+

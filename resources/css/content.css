@@ -1,0 +1,533 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'PT Sans Narrow', '';
+    font-size: 16px;
+    color: #555;
+}
+
+a,
+a:visited,
+a:active {
+    color: #1d77c2;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #555;
+}
+
+main {
+    margin: 3em auto 6em auto;
+    max-width: 850px;
+    line-height: 1.6em;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: normal;
+    margin: 0 0 1em;
+}
+
+h2 {
+    color: #1d77c2;
+    font-size: 1.8em;
+    font-weight: normal;
+    margin: 3em 0 1em;
+}
+
+h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 2em 0 1em;
+}
+
+h4 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 2em 0 1em;
+}
+
+li {
+    list-style-type: none;
+}
+
+/* minimap positioning */
+#map {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 160px;
+    height: 100%;
+    z-index: 100;
+}
+
+
+
+
+
+/* auto-generated css from json structure below */
+
+.asn_altStatementNotation > .language { display: none; }
+
+.asn_altStatementNotation > .literal { display: none; }
+
+.asn_authorityStatus > .uri { display: none; }
+
+.asn_indexingStatus > .uri { display: none; }
+
+.asn_statementLabel > .language { display: none; }
+
+.asn_statementLabel > .literal { display: none; }
+
+.asn_statementNotation > .language { display: none; }
+
+.asn_statementNotation > .literal { display: none; }
+
+.children > .asn_altStatementNotation > .language { display: none; }
+
+.children > .asn_altStatementNotation > .literal { display: none; }
+
+.children > .asn_authorityStatus > .uri { display: none; }
+
+.children > .asn_indexingStatus > .uri { display: none; }
+
+.children > .asn_listID > .language { display: none; }
+
+.children > .asn_listID > .literal { display: none; }
+
+.children > .asn_statementLabel > .language { display: none; }
+
+.children > .asn_statementLabel > .literal { display: none; }
+
+.children > .asn_statementNotation > .language { display: none; }
+
+.children > .asn_statementNotation > .literal { display: none; }
+
+.children > .children > .asn_altStatementNotation > .language { display: none; }
+
+.children > .children > .asn_altStatementNotation > .literal { display: none; }
+
+.children > .children > .asn_authorityStatus > .uri { display: none; }
+
+.children > .children > .asn_indexingStatus > .uri { display: none; }
+
+.children > .children > .asn_listID > .language { display: none; }
+
+.children > .children > .asn_listID > .literal { display: none; }
+
+.children > .children > .asn_statementLabel > .language { display: none; }
+
+.children > .children > .asn_statementLabel > .literal { display: none; }
+
+.children > .children > .asn_statementNotation > .language { display: none; }
+
+.children > .children > .asn_statementNotation > .literal { display: none; }
+
+.children > .children > .children > .asn_altStatementNotation > .language { display: none; }
+
+.children > .children > .children > .asn_altStatementNotation > .literal { display: none; }
+
+.children > .children > .children > .asn_authorityStatus > .uri { display: none; }
+
+.children > .children > .children > .asn_indexingStatus > .uri { display: none; }
+
+.children > .children > .children > .asn_listID > .language { display: none; }
+
+.children > .children > .children > .asn_listID > .literal { display: none; }
+
+.children > .children > .children > .asn_minorAlignment { display: none; }
+
+.children > .children > .children > .asn_statementLabel > .language { display: none; }
+
+.children > .children > .children > .asn_statementLabel > .literal { display: none; }
+
+.children > .children > .children > .asn_statementNotation { display: none; }
+
+.children > .children > .children > .children > .asn_altStatementNotation > .language { display: none; }
+
+.children > .children > .children > .children > .asn_altStatementNotation > .literal { display: none; }
+
+.children > .children > .children > .children > .asn_authorityStatus > .uri { display: none; }
+
+.children > .children > .children > .children > .asn_exactMatch { display: none; }
+
+.children > .children > .children > .children > .asn_exactMatch > .prefLabel { display: none; }
+
+.children > .children > .children > .children > .asn_exactMatch > .uri { display: none; }
+
+.children > .children > .children > .children > .asn_indexingStatus > .uri { display: none; }
+
+.children > .children > .children > .children > .asn_listID { display: none; }
+
+.children > .children > .children > .children > .asn_minorAlignment { display: none; }
+
+.children > .children > .children > .children > .asn_statementLabel > .language { display: none; }
+
+.children > .children > .children > .children > .asn_statementLabel > .literal { display: none; }
+
+.children > .children > .children > .children > .asn_statementNotation { display: none; }
+
+.children > .children > .children > .children > .children > .asn_altStatementNotation > .language { display: none; }
+
+.children > .children > .children > .children > .children > .asn_altStatementNotation > .literal { display: none; }
+
+.children > .children > .children > .children > .children > .asn_authorityStatus > .uri { display: none; }
+
+.children > .children > .children > .children > .children > .asn_exactMatch { display: none; }
+
+.children > .children > .children > .children > .children > .asn_indexingStatus > .uri { display: none; }
+
+.children > .children > .children > .children > .children > .asn_listID { display: none; }
+
+.children > .children > .children > .children > .children > .asn_minorAlignment { display: none; }
+
+.children > .children > .children > .children > .children > .asn_statementLabel > .language { display: none; }
+
+.children > .children > .children > .children > .children > .asn_statementLabel > .literal { display: none; }
+
+.children > .children > .children > .children > .children > .asn_statementNotation { display: none; }
+
+.children > .children > .children > .children > .children > .children > .asn_altStatementNotation > .language { display: none; }
+
+.children > .children > .children > .children > .children > .children > .asn_altStatementNotation > .literal { display: none; }
+
+.children > .children > .children > .children > .children > .children > .asn_authorityStatus > .uri { display: none; }
+
+.children > .children > .children > .children > .children > .children > .asn_exactMatch { display: none; }
+
+.children > .children > .children > .children > .children > .children > .asn_indexingStatus > .uri { display: none; }
+
+.children > .children > .children > .children > .children > .children > .asn_listID { display: none; }
+
+.children > .children > .children > .children > .children > .children > .asn_minorAlignment { display: none; }
+
+.children > .children > .children > .children > .children > .children > .asn_statementLabel > .language { display: none; }
+
+.children > .children > .children > .children > .children > .children > .asn_statementLabel > .literal { display: none; }
+
+.children > .children > .children > .children > .children > .children > .asn_statementNotation { display: none; }
+
+.children > .children > .children > .children > .children > .children > .dcterms_description > .language { display: none; }
+
+.children > .children > .children > .children > .children > .children > .dcterms_description > .literal { display: none; }
+
+.children > .children > .children > .children > .children > .children > .dcterms_educationLevel > .prefLabel { display: none; }
+
+.children > .children > .children > .children > .children > .children > .dcterms_educationLevel > .uri { display: none; }
+
+.children > .children > .children > .children > .children > .children > .dcterms_modified > .literal { display: none; }
+
+.children > .children > .children > .children > .children > .children > .dcterms_related { display: none; }
+
+.children > .children > .children > .children > .children > .children > .dcterms_related > .prefLabel { display: none; }
+
+.children > .children > .children > .children > .children > .children > .dcterms_related > .uri { display: none; }
+
+.children > .children > .children > .children > .children > .children > .dcterms_skillEmbodied { display: none; }
+
+.children > .children > .children > .children > .children > .children > .dcterms_skillEmbodied > .prefLabel { display: none; }
+
+.children > .children > .children > .children > .children > .children > .dcterms_skillEmbodied > .uri { display: none; }
+
+.children > .children > .children > .children > .children > .children > .dcterms_subject > .prefLabel { display: none; }
+
+.children > .children > .children > .children > .children > .children > .dcterms_subject > .uri { display: none; }
+
+.children > .children > .children > .children > .children > .children > .id { display: none; }
+
+.children > .children > .children > .children > .children > .children > .leaf { display: none; }
+
+.children > .children > .children > .children > .children > .children > .schema_org { display: none; }
+
+.children > .children > .children > .children > .children > .children > .text { display: none; }
+
+.children > .children > .children > .children > .children > .cls { display: none; }
+
+.children > .children > .children > .children > .children > .dcterms_description > .language { display: none; }
+
+.children > .children > .children > .children > .children > .dcterms_description > .literal { display: none; }
+
+.children > .children > .children > .children > .children > .dcterms_educationLevel > .prefLabel { display: none; }
+
+.children > .children > .children > .children > .children > .dcterms_educationLevel > .uri { display: none; }
+
+.children > .children > .children > .children > .children > .dcterms_modified > .literal { display: none; }
+
+.children > .children > .children > .children > .children > .dcterms_related { display: none; }
+
+.children > .children > .children > .children > .children > .dcterms_related > .prefLabel { display: none; }
+
+.children > .children > .children > .children > .children > .dcterms_related > .uri { display: none; }
+
+.children > .children > .children > .children > .children > .dcterms_skillEmbodied { display: none; }
+
+.children > .children > .children > .children > .children > .dcterms_skillEmbodied > .prefLabel { display: none; }
+
+.children > .children > .children > .children > .children > .dcterms_skillEmbodied > .uri { display: none; }
+
+.children > .children > .children > .children > .children > .dcterms_subject > .prefLabel { display: none; }
+
+.children > .children > .children > .children > .children > .dcterms_subject > .uri { display: none; }
+
+.children > .children > .children > .children > .children > .id { display: none; }
+
+.children > .children > .children > .children > .children > .leaf { display: none; }
+
+.children > .children > .children > .children > .children > .schema_org { display: none; }
+
+.children > .children > .children > .children > .children > .text { display: none; }
+
+.children > .children > .children > .children > .cls { display: none; }
+
+.children > .children > .children > .children > .dcterms_description > .language { display: none; }
+
+.children > .children > .children > .children > .dcterms_description > .literal { display: none; }
+
+.children > .children > .children > .children > .dcterms_educationLevel > .prefLabel { display: none; }
+
+.children > .children > .children > .children > .dcterms_educationLevel > .uri { display: none; }
+
+.children > .children > .children > .children > .dcterms_modified > .literal { display: none; }
+
+.children > .children > .children > .children > .dcterms_related { display: none; }
+
+.children > .children > .children > .children > .dcterms_skillEmbodied { display: none; }
+
+.children > .children > .children > .children > .dcterms_subject > .prefLabel { display: none; }
+
+.children > .children > .children > .children > .dcterms_subject > .uri { display: none; }
+
+.children > .children > .children > .children > .id { display: none; }
+
+.children > .children > .children > .children > .leaf { display: none; }
+
+.children > .children > .children > .children > .schema_org { display: none; }
+
+.children > .children > .children > .children > .text { display: none; }
+
+.children > .children > .children > .cls { display: none; }
+
+.children > .children > .children > .dcterms_coverage > .language { display: none; }
+
+.children > .children > .children > .dcterms_coverage > .literal { display: none; }
+
+.children > .children > .children > .dcterms_created > .literal { display: none; }
+
+.children > .children > .children > .dcterms_educationLevel { display: none; }
+
+.children > .children > .children > .dcterms_educationLevel > .prefLabel { display: none; }
+
+.children > .children > .children > .dcterms_educationLevel > .uri { display: none; }
+
+.children > .children > .children > .dcterms_modified > .literal { display: none; }
+
+.children > .children > .children > .dcterms_subject > .prefLabel { display: none; }
+
+.children > .children > .children > .dcterms_subject > .uri { display: none; }
+
+.children > .children > .children > .dcterms_title > .language { display: none; }
+
+.children > .children > .children > .dcterms_title > .literal { display: none; }
+
+.children > .children > .children > .deo_epilogue > .language { display: none; }
+
+.children > .children > .children > .deo_epilogue > .literal { display: none; }
+
+.children > .children > .children > .deo_introduction > .language { display: none; }
+
+.children > .children > .children > .deo_introduction > .literal { display: none; }
+
+.children > .children > .children > .id { display: none; }
+
+.children > .children > .children > .nesa_is_life_skills { display: none; }
+
+.children > .children > .children > .skos_inScheme > .language { display: none; }
+
+.children > .children > .children > .skos_inScheme > .literal { display: none; }
+
+.children > .children > .children > .text { display: none; }
+
+.children > .children > .cls { display: none; }
+
+.children > .children > .dcterms_created > .literal { display: none; }
+
+.children > .children > .dcterms_educationLevel { display: none; }
+
+.children > .children > .dcterms_educationLevel > .prefLabel { display: none; }
+
+.children > .children > .dcterms_educationLevel > .uri { display: none; }
+
+.children > .children > .dcterms_issued > .literal { display: none; }
+
+.children > .children > .dcterms_modified > .literal { display: none; }
+
+.children > .children > .dcterms_subject > .prefLabel { display: none; }
+
+.children > .children > .dcterms_subject > .uri { display: none; }
+
+.children > .children > .dcterms_title > .language { display: none; }
+
+.children > .children > .dcterms_title > .literal { display: none; }
+
+.children > .children > .id { display: none; }
+
+.children > .children > .skos_inScheme > .language { display: none; }
+
+.children > .children > .skos_inScheme > .literal { display: none; }
+
+.children > .children > .text { display: none; }
+
+.children > .cls { display: none; }
+
+.children > .dcterms_abstract { display: none; }
+
+.children > .dcterms_created > .literal { display: none; }
+
+.children > .dcterms_dateAccepted > .literal { display: none; }
+
+.children > .dcterms_dateCopyrighted > .literal { display: none; }
+
+.children > .dcterms_educationLevel > .prefLabel { display: none; }
+
+.children > .dcterms_educationLevel > .uri { display: none; }
+
+.children > .dcterms_issued > .literal { display: none; }
+
+.children > .dcterms_modified > .literal { display: none; }
+
+.children > .dcterms_subject > .prefLabel { display: none; }
+
+.children > .dcterms_subject > .uri { display: none; }
+
+.children > .dcterms_title > .language { display: none; }
+
+.children > .dcterms_title > .literal { display: none; }
+
+.children > .dcterms_valid > .literal { display: none; }
+
+.children > .id { display: none; }
+
+.children > .objectives > .asn_altStatementNotation > .language { display: none; }
+
+.children > .objectives > .asn_altStatementNotation > .literal { display: none; }
+
+.children > .objectives > .asn_authorityStatus > .uri { display: none; }
+
+.children > .objectives > .asn_indexingStatus > .uri { display: none; }
+
+.children > .objectives > .asn_listID > .language { display: none; }
+
+.children > .objectives > .asn_listID > .literal { display: none; }
+
+.children > .objectives > .asn_statementLabel > .language { display: none; }
+
+.children > .objectives > .asn_statementLabel > .literal { display: none; }
+
+.children > .objectives > .children > .asn_altStatementNotation > .language { display: none; }
+
+.children > .objectives > .children > .asn_altStatementNotation > .literal { display: none; }
+
+.children > .objectives > .children > .asn_authorityStatus > .uri { display: none; }
+
+.children > .objectives > .children > .asn_indexingStatus > .uri { display: none; }
+
+.children > .objectives > .children > .asn_listID > .language { display: none; }
+
+.children > .objectives > .children > .asn_listID > .literal { display: none; }
+
+.children > .objectives > .children > .asn_minorAlignment { display: none; }
+
+.children > .objectives > .children > .asn_minorAlignment > .prefLabel { display: none; }
+
+.children > .objectives > .children > .asn_minorAlignment > .uri { display: none; }
+
+.children > .objectives > .children > .asn_statementLabel > .language { display: none; }
+
+.children > .objectives > .children > .asn_statementLabel > .literal { display: none; }
+
+.children > .objectives > .children > .asn_statementNotation > .language { display: none; }
+
+.children > .objectives > .children > .asn_statementNotation > .literal { display: none; }
+
+.children > .objectives > .children > .asn_teachesCompetency { display: none; }
+
+.children > .objectives > .children > .asn_teachesCompetency > .uri { display: none; }
+
+.children > .objectives > .children > .dcterms_created > .literal { display: none; }
+
+.children > .objectives > .children > .dcterms_description > .language { display: none; }
+
+.children > .objectives > .children > .dcterms_description > .literal { display: none; }
+
+.children > .objectives > .children > .dcterms_educationLevel { display: none; }
+
+.children > .objectives > .children > .dcterms_educationLevel > .prefLabel { display: none; }
+
+.children > .objectives > .children > .dcterms_educationLevel > .uri { display: none; }
+
+.children > .objectives > .children > .dcterms_modified > .literal { display: none; }
+
+.children > .objectives > .children > .dcterms_subject > .prefLabel { display: none; }
+
+.children > .objectives > .children > .dcterms_subject > .uri { display: none; }
+
+.children > .objectives > .children > .gem_isChildOf { display: none; }
+
+.children > .objectives > .children > .id { display: none; }
+
+.children > .objectives > .children > .leaf { display: none; }
+
+.children > .objectives > .children > .nesa_syllabus_life_skills { display: none; }
+
+.children > .objectives > .children > .text { display: none; }
+
+.children > .objectives > .cls { display: none; }
+
+.children > .objectives > .dcterms_created > .literal { display: none; }
+
+.children > .objectives > .dcterms_educationLevel > .prefLabel { display: none; }
+
+.children > .objectives > .dcterms_educationLevel > .uri { display: none; }
+
+.children > .objectives > .dcterms_modified > .literal { display: none; }
+
+.children > .objectives > .dcterms_subject > .prefLabel { display: none; }
+
+.children > .objectives > .dcterms_subject > .uri { display: none; }
+
+.children > .objectives > .dcterms_title > .language { display: none; }
+
+.children > .objectives > .dcterms_title > .literal { display: none; }
+
+.children > .objectives > .id { display: none; }
+
+.children > .objectives > .text { display: none; }
+
+.children > .skos_inScheme > .language { display: none; }
+
+.children > .skos_inScheme > .literal { display: none; }
+
+.children > .text { display: none; }
+
+.cls { display: none; }
+
+.dcterms_modified > .literal { display: none; }
+
+.dcterms_subject > .prefLabel { display: none; }
+
+.dcterms_subject > .uri { display: none; }
+
+.dcterms_title > .language { display: none; }
+
+.dcterms_title > .literal { display: none; }
+
+.id { display: none; }
+
+.text { display: none; }
+

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Syllabus Files Index View</title>
+    <meta name="description" content="auto-generated curriculum audit data-view">
+    <meta name="author" content="nsip">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- google text fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Karla|PT+Sans+Narrow&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="/{{ .FM.CssPath }}audit.css" media="screen,projection" />
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--  -->
+    <!--  -->
+    <!-- external javascript dependencies -->
+    <!--  -->
+    <!-- jquery support -->
+    <!--  -->
+    <script type="text/javascript" src="/{{ .FM.JsPath }}jquery-3.3.1.min.js"></script>
+    <!--  -->
+    <!-- math/tex content interpreter from katex - khan academy maths/latex renderer -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mathtex-script-type.min.js" integrity="sha384-LJ2FmexL77rmGm6SIpxq7y+XA6bkLzGZEgCywzKOZG/ws4va9fUVu2neMjvc3zdv" crossorigin="anonymous"></script>
+    <!--  -->
+    <!--  -->
+</head>
+
+<body>
+    <!--  -->
+    <!-- main content -->
+    <!--  -->
+    <main class="container">
+        {{- define "recursive"}}
+            {{- if isArray .}}
+                <ul class='array'>
+                    {{- range $element := .}}
+                    {{- template "recursive" $element}}
+                    {{- end}}
+                </ul>
+            {{- else if isObject .}}
+                {{- range $key, $value := .}}
+                {{- if isLeaf $value}}
+                    <li class="leaf">
+                        <span class='key'>{{$key}}: </span>
+                        <span class='value'>{{$value}}</span>
+                    </li>
+                {{- else}}
+                    <ul class="object">
+                        <li class="node"><h4><span class='key'>{{$key}}:</span></h4></li>
+                    <!-- <ul class="object"> -->
+                        {{template "recursive" $value}}
+                    </ul>
+                {{- end}}
+            {{- end}}
+            {{- else}}
+                <li class="leaf"><span class='value'>{{ . }}</span></li>
+            {{- end}}
+        {{- end}}
+        {{- template "recursive" .JSON }}
+    </main>
+</body>
+<!-- page-specific javascript -->
+<script type="text/javascript" src="/{{ .FM.JsPath }}audit.js"></script>
+<script>
+</script>
+
+</html>

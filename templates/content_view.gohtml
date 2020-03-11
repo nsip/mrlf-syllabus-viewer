@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>[{{ .FM.RootName }}]::Content View</title>
+    <meta name="description" content="auto-generated curriculum content data-view">
+    <meta name="author" content="nsip">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- google text fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Karla|PT+Sans+Narrow&display=swap" rel="stylesheet">
+    <!-- page-specific css -->
+    <link type="text/css" rel="stylesheet" href="/{{ .FM.CssPath }}content.css" media="screen,projection" />
+    <!-- to keep strucutral css simple; load overrides  -->
+    <link type="text/css" rel="stylesheet" href="/{{ .FM.CssPath }}content_overrides.css" media="screen,projection" />
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--  -->
+    <!--  -->
+    <!-- external javascript dependencies -->
+    <!--  -->
+    <!-- jquery support -->
+    <!--  -->
+    <script type="text/javascript" src="/{{ .FM.JsPath }}jquery-3.3.1.min.js"></script>
+    <!--  -->
+    <!-- math/tex content interpreter from katex - khan academy maths/latex renderer -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mathtex-script-type.min.js" integrity="sha384-LJ2FmexL77rmGm6SIpxq7y+XA6bkLzGZEgCywzKOZG/ws4va9fUVu2neMjvc3zdv" crossorigin="anonymous"></script>
+    <!--  -->
+    <!--  -->
+</head>
+
+<body>
+    <!--  -->
+    <!-- main content -->
+    <!--  -->
+    <main class="container">
+        {{- define "recursive"}}
+            {{- if isArray .}}
+                {{- range $element := .}}
+                {{- template "recursive" $element}}
+                {{- end}}
+            {{- else if isObject .}}
+                {{- range $key, $value := .}}
+                {{- if isLeaf $value}}
+                    <span class='{{$key}}'>{{$value}}</span>
+                {{- else}}
+                    <div class="{{$key}}">
+                        {{template "recursive" $value}}
+                    </div>
+                {{- end}}
+            {{- end}}
+            {{- else}}
+                <span class='value'>{{ . }}</span>
+            {{- end}}
+        {{- end}}
+        {{- template "recursive" .JSON }}
+    </main>
+    
+    <!-- page-specific javascript -->
+    <script type="text/javascript" src="/{{ .FM.JsPath }}content.js"></script>
+    <!--  -->
+    <!-- add minimap navigator -->
+    <!--  -->
+    <canvas id="map" width="160px"></canvas>
+
+    <script src="/{{ .FM.JsPath }}pagemap.min.js"></script>
+    <script>
+        pagemap(document.querySelector('#map'), {
+            styles: { 
+            // highlight minimap text outline
+            span: 'rgba(0,0,0,0.1)',
+            '.container > .children > .children > .dcterms_title > .literal': 'rgba(0,0,0,0.6)',
+            '.container > .children > .objectives > .children > .text p ': 'rgba(0,0,0,0.3)',
+            'h2': 'rgba(0,0,0,0.8)'
+            }
+        });
+
+    </script>
+
+</body>
+
+
+</html>
