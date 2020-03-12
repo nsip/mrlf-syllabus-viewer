@@ -58,15 +58,21 @@ bundled already.
 assuming everything works, you can then point your browser to the following reports:
 
 http://localhost:1323/nesa2/audit.html 
+
 http://localhost:1323/output/audit.html 
+
 - ‘audit’ view, shows whole structure and allows you to toggle visibility of class nestings 
 
 http://localhost:1323/nesa2/glossary.html
+
 http://localhost:1323/outpput/glossary.html
+
 - glossary view, extracts the glossary and makes it searchable 
 
 http://localhost:1323/nesa2/content.html
+
 http://localhost:1323/output/content.html
+
 - content view shows selected items of content (based on css)
 
 
