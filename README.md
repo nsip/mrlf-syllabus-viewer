@@ -65,7 +65,7 @@ http://localhost:1323/output/audit.html
 
 http://localhost:1323/nesa2/glossary.html
 
-http://localhost:1323/outpput/glossary.html
+http://localhost:1323/output/glossary.html
 
 - glossary view, extracts the glossary and makes it searchable 
 
