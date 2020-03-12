@@ -14,7 +14,7 @@ in the root directory.
 (Build script needs a unix-like environment)
 
 ## Binary packages
-Pre-built binaries are avalable [here].(https://github.com/nsip/mrlf-syllabus-viewer/releases/latest)
+Pre-built binaries are avalable [here](https://github.com/nsip/mrlf-syllabus-viewer/releases/latest)
 
 ## Installing
 Unpack the zip file for your platform to a suitable folder.
