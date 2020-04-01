@@ -40,11 +40,17 @@ stage content-groups
 content-group coverage text
 */
 .container > .children > .children > .children > .dcterms_coverage > .literal {
-    display: block;
+    display: inline;
     font-style: italic;
     font-size: 1.15em; 
     padding: 10px;
 }
+
+.container > .children > .children > .children > .dcterms_coverage > .literal:before {
+    content: 'Coverage: ';
+    font-style: italic;
+}
+
 
 /*
 content-group item description
@@ -122,3 +128,23 @@ give it a label
 .children > .objectives > .dcterms_title > .literal:before { 
     content: 'Description: ';   
 }
+
+
+.children > .asn_statementNotation > .literal { display: inline; color:green; }
+.children > .children > .asn_statementNotation > .literal { display: inline; color:green; }
+.children > .children > .children > .asn_statementNotation > .literal { display: inline;  color:green;}
+.children > .children > .children > .children > .asn_statementNotation > .literal { display: inline;  color:green;}
+.children > .children > .children > .content > .asn_statementNotation > .literal { display: inline; color:green; }
+.children > .children > .children > .content > .children > .asn_statementNotation > .literal { display: inline; color:green; }
+.children > .children > .children > .content > .children > .children > .asn_statementNotation  > .literal{ display: inline; color:green; }
+.children > .objectives > .children > .asn_statementNotation > .literal > .literal { display: inline; color:green; }
+
+.children > .asn_altStatementNotation > .literal { display: inline; color:red; }
+.children > .children > .asn_altStatementNotation > .literal { display: inline; color:red; }
+.children > .children > .children > .asn_altStatementNotation  > .literal { display: inline;  color:red;}
+.children > .children > .children > .children > .asn_altStatementNotation  > .literal { display: inline;  color:red;}
+.children > .children > .children > .content > .asn_altStatementNotation  > .literal { display: inline; color:red; }
+.children > .children > .children > .content > .children > .asn_altStatementNotation  > .literal { display: inline; color:red; }
+.children > .children > .children > .content > .children > .children > .asn_altStatementNotation  > .literal { display: inline; color:red; }
+.children > .objectives > .children > .asn_altStatementNotation > .literal { display: inline; color:red; }
+
