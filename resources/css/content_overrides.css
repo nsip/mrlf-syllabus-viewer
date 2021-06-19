@@ -1,150 +1,179 @@
-
-
 main {
-    margin: 3em auto 6em auto;
-    max-width: 900px;
-    line-height: 1.6em;
+  margin: 3em auto 6em auto;
+  max-width: 900px;
+  line-height: 1.6em;
 }
 
+/* ----------- */
 
-/*
-syllabus name
-*/
-.container > .asn_statementNotation > .literal { 
-    display: block;
-    padding-top: 10px;
-    padding-bottom: 20px;
-    font-weight: bold;
-    font-size: 2.5em; 
+.container > .kla_heading {
+  display: block;
+  font-size: 3em;
+  margin: 10px;
+  text-align: center;
 }
 
-/*
-stage headings
-*/
-.container > .children > .children > .dcterms_title > .literal {
-    display: block;
-    font-size: 2.35em; 
+.container > .syllabus > .syl_heading {
+  font-size: 1.2em;
 }
 
-/*
-stage content-groups
-*/
-.container > .children > .children > .children > .dcterms_title > .literal {
-    display: block;
-    font-style: italic;
-    font-size: 1.15em; 
-    padding: 10px;
+.container > .syllabus > .intro > .heading {
+  font-weight: bold;
+  font-size: 1.2em;
 }
 
-/*
-content-group coverage text
-*/
-.container > .children > .children > .children > .dcterms_coverage > .literal {
-    display: inline;
-    font-style: italic;
-    font-size: 1.15em; 
-    padding: 10px;
+.container > .syllabus > .rationale > .heading {
+  font-weight: bold;
+  font-size: 1.2em;
 }
 
-.container > .children > .children > .children > .dcterms_coverage > .literal:before {
-    content: 'Coverage: ';
-    font-style: italic;
+.container > .syllabus > .aim > .heading {
+  font-weight: bold;
+  font-size: 1.2em;
 }
 
-
-/*
-content-group item description
-*/
-.container > .children > .children > .children > .children > .dcterms_description > .literal {
-    display: block;
-    /*font-style: italic;*/
-    font-weight: bold;
-    font-size: 1.15em; 
-    padding: 10px;
+.container > .syllabus > .stages > .heading {
+  font-weight: bold;
+  font-size: 1.2em;
 }
 
-/*
-content-group sub- item description
-*/
-.container > .children > .children > .children > .children > .children > .dcterms_description > .literal {
-    display: block;
-    /*font-style: italic;*/
-    font-size: 1.35em; 
-    padding: 10px;
+.container > .syllabus > .stages > .stage > .stage_title {
+  display: block;
+  font-size: 1.6em;
+  margin: 10px 0px;
 }
 
-/*
-content-group sub-sub item description
-*/
-.container > .children > .children > .children > .children > .children > .children > .dcterms_description > .literal {
-    display: block;
-    font-style: italic;
-    font-size: 1.25em; 
-    padding: 10px;
+.container > .syllabus > .stages > .stage > .statement > .heading {
+  font-weight: bold;
+  font-size: 1.3em;
 }
 
-
-/*
-outcome text
-*/
-.children > .objectives > .children > .text { 
-    display: inline;
-    padding-bottom: 2px;
-    padding-left: 20px;
-    /*margin-left: 10px;*/
+.container .syllabus .objectives .objective .objective_description {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: bold;
+  font-size: 1.3em;
 }
 
-/*
-is a para in nesa json, so added prcessing
-*/
-.children > .objectives > .children > .text p { 
-    display: inline;
-    margin-left: 5px;
+.container > .syllabus > .objectives > .objective > .outcomes {
+  padding: 0px 60px;
 }
 
-/*
-give each outcome a label
-*/
-.children > .objectives > .children > .text:before { 
-    content: 'Outcome: ';
-    font-style: italic;
+.container > .syllabus > .objectives > .objective > .outcomes > .outcome {
+  list-style-type: decimal-leading-zero;
 }
 
-/*
-the text description of the objective
-*/
-.children > .objectives > .dcterms_title > .literal { 
-    display: block;
-    /*padding: 10px;*/
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-weight: bold;
-    font-size: 1.3em; 
+.container > .syllabus > .stages > .stage > .content_groups > .content_group {
+  padding: 0 1.5rem;
 }
 
-/*
-give it a label
-*/
-.children > .objectives > .dcterms_title > .literal:before { 
-    content: 'Description: ';   
+.container
+  > .syllabus
+  > .stages
+  > .stage
+  > .content_groups
+  > .content_group
+  > .content_group_heading {
+  color: coral;
+  font-size: 1.3em;
 }
 
+.container
+  > .syllabus
+  > .stages
+  > .stage
+  > .content_groups
+  > .content_group
+  .heading {
+  font-weight: bold;
+  font-size: 1.3em;
+}
 
-.children > .asn_statementNotation > .literal { display: inline; color:green; }
-.children > .children > .asn_statementNotation > .literal { display: inline; color:green; }
-.children > .children > .children > .asn_statementNotation > .literal { display: inline;  color:green;}
-.children > .children > .children > .children > .asn_statementNotation > .literal { display: inline;  color:green;}
-.children > .children > .children > .content > .asn_statementNotation > .literal { display: inline; color:green; }
-.children > .children > .children > .content > .children > .asn_statementNotation > .literal { display: inline; color:green; }
-.children > .children > .children > .content > .children > .children > .asn_statementNotation  > .literal{ display: inline; color:green; }
-.children > .objectives > .children > .asn_statementNotation > .literal > .literal { display: inline; color:green; }
+.container
+  > .syllabus
+  > .stages
+  > .stage
+  > .content_groups
+  > .content_group
+  > .contents
+  > .content_list
+  > .content
+  > .content_description {
+  font-style: italic;
+  font-size: large;
+}
 
-.children > .asn_altStatementNotation > .literal { display: inline; color:red; }
-.children > .children > .asn_altStatementNotation > .literal { display: inline; color:red; }
-.children > .children > .children > .asn_altStatementNotation  > .literal { display: inline;  color:red;}
-.children > .children > .children > .children > .asn_altStatementNotation  > .literal { display: inline;  color:red;}
-.children > .children > .children > .content > .asn_altStatementNotation  > .literal { display: inline; color:red; }
-.children > .children > .children > .content > .children > .asn_altStatementNotation  > .literal { display: inline; color:red; }
-.children > .children > .children > .content > .children > .children > .asn_altStatementNotation  > .literal { display: inline; color:red; }
-.children > .objectives > .children > .asn_altStatementNotation > .literal { display: inline; color:red; }
+.container
+  > .syllabus
+  > .stages
+  > .stage
+  > .content_groups
+  > .content_group
+  > .contents
+  > .content_list
+  > .content
+  > .exact_alignment {
+  font-style: italic;
+  font-size: smaller;
+}
+
+.container
+  > .syllabus
+  > .stages
+  > .stage
+  > .content_groups
+  > .content_group
+  > .contents
+  > .content_list
+  > .content
+  > .intended_learnings {
+  padding: 0 1.5rem;
+}
+
+.container
+  > .syllabus
+  > .stages
+  > .stage
+  > .content_groups
+  > .content_group
+  > .contents
+  > .content_list
+  > .content
+  > .intended_learnings
+  > .intended_learning {
+  list-style-type: disc;
+}
+
+.container
+  > .syllabus
+  > .stages
+  > .stage
+  > .content_groups
+  > .content_group
+  > .contents
+  > .content_list
+  > .content
+  > .intended_learnings
+  > .intended_learning
+  .arrow_bullet_point {
+  margin: 0 0.4rem;
+  padding: 0 0.4rem;
+}
+
+.container
+  > .syllabus
+  > .stages
+  > .stage
+  > .content_groups
+  > .content_group
+  > .contents
+  > .content_list
+  > .content
+  > .intended_learnings
+  > .intended_learning
+  .arrow_bullet_point::marker {
+  content: ">";
+  font-weight: bold;
+  font-size: 1.2em;
+}
 
