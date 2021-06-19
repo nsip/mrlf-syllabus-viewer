@@ -100,6 +100,18 @@ func main() {
 
 	baseOutputFolder = *outputFolder
 	resourcesFolder = "./resources"
+	
+	srcImageFolder := fmt.Sprintf("%s/%s", resourcesFolder, "image")
+	destImgFolder := fmt.Sprintf("%s%s", baseOutputFolder, "images")
+	err := os.MkdirAll(destImgFolder, os.ModePerm)
+  if err != nil {
+    fmt.Println("unable to create target image directory: ", err)
+	}
+	
+	cerr := copyDirectory(srcImageFolder, destImgFolder)
+	if cerr != nil {
+		fmt.Println("unable to copy image directory: ", err)
+	}
 
 	// open folder and parse all json filenames
 	// make sure default input folder exists
@@ -534,6 +546,27 @@ func copyFileContents(src, dst string) error {
 	}
 	err = out.Sync()
 	return err
+}
+
+//
+// Copy directory from specified source path to destination path
+// 
+func copyDirectory(scrDir, dest string) error {
+	entries, err := ioutil.ReadDir(scrDir)
+	if err != nil {
+		return err
+	}
+	for _, entry := range entries {
+		sourcePath := filepath.Join(scrDir, entry.Name())
+		destPath := filepath.Join(dest, entry.Name())
+
+		err := copyFileContents(sourcePath, destPath);
+		if err != nil {
+			fmt.Println("Ignored invalid file ", sourcePath)
+		}
+
+	}
+	return nil
 }
 
 //
