@@ -6,14 +6,19 @@
     <title>[{{ .FM.RootName }}]::Content View</title>
     <meta name="description" content="auto-generated curriculum content data-view">
     <meta name="author" content="nsip">
+    <link rel="icon" type="image/jpg" href="/images/esa.png"/>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- google text fonts -->
     <link href="https://fonts.googleapis.com/css?family=Karla|PT+Sans+Narrow&display=swap" rel="stylesheet">
     <!-- page-specific css -->
+
     <link type="text/css" rel="stylesheet" href="/{{ .FM.CssPath }}content.css" media="screen,projection" />
+
     <!-- to keep strucutral css simple; load overrides  -->
+
     <link type="text/css" rel="stylesheet" href="/{{ .FM.CssPath }}content_overrides.css" media="screen,projection" />
+
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--  -->
@@ -54,24 +59,216 @@
                 <span class='value'>{{ . }}</span>
             {{- end}}
         {{- end}}
-        {{- template "recursive" .JSON }}
+
+        {{- define "syllabus"}}
+          {{- range $key, $syllabus := . }}
+            <div class="syllabus">
+              {{ $syl_heading := printf "%s%s" $syllabus.text " Syllabus" }}
+              <h2>{{$syl_heading}}</h2>
+
+              {{- if $syllabus.dcterms_abstract }}
+                <div class="intro">
+                  <h3>Introduction</h3>
+                  <div>{{$syllabus.dcterms_abstract.introduction}}</div>
+                </div>
+              {{- end}}
+
+              {{- if $syllabus.dcterms_abstract }}
+                <div class="rationale">
+                  <h3>Rationale</h3>
+                  <div>{{$syllabus.dcterms_abstract.rationale}}</div>
+                </div>
+              {{- end}}
+
+              {{- if $syllabus.dcterms_abstract }}
+                <div class="aim">
+                  <h3>Aim</h3>
+                  <div>{{$syllabus.dcterms_abstract.aim}}</div>
+                </div>
+              {{- end}}
+
+              {{- template "stages" $syllabus.children }}
+
+              <hr/>
+
+              {{- template "objectives" $syllabus.objectives }}
+            </div>
+          {{- end}}
+        {{- end}}
+
+        {{- define "stages"}}
+          <div class="stages">
+            <h3>Stages</h3>
+            {{- range $stgKey, $stg := . }}
+              {{- template "stage" $stg }}
+            {{- end}}
+          </div>
+        {{- end}}
+
+        {{- define "stage"}}
+          {{ $stg := . }}
+          {{ $stg_title := $stg.dcterms_title.literal }}
+          <div class="stage">
+            <div class="stage_title">{{$stg_title}}</div>
+            <hr/>
+
+            {{- if $stg.dcterms_description }}
+              <div class="statement">
+                <div class="heading" title="{{$stg_title}}">Statement</div>
+                <div class="description" >{{$stg.dcterms_description.literal}}</div>
+              </div>
+            {{- end}}
+            <br/>
+
+            {{- template "content_groups" $stg }}
+          </div>
+        {{- end}}
+
+        {{- define "content_groups"}}
+          {{ $stg_title := .dcterms_title.literal }}
+          <ul class="content_groups">
+            /* TODO: Template accepts only one variable parameter. Therefore, it is impossible
+               to pass stage title and content group node to another template, content_group.
+               For the moment, the following code will remain here until Golang template gets
+               the above capability.
+            */
+            {{- range $cgKey, $cg := .children }}
+              {{ $cg_heading := $cg.dcterms_title.literal }}
+              <li class="content_group">
+                <div class="content_group_heading" title="{{ $stg_title }}">{{$cg_heading}}</div>
+                {{ $path := printf "%s%s%s" $stg_title "  -  " $cg_heading }}
+                
+                {{- if $cg.dcterms_coverage }}
+                  <div class="concept">
+                    <div class="heading" title="{{$path}}">Concept</div>
+                    <div class="description" >{{$cg.dcterms_coverage.literal}}</div>
+                  </div>
+                {{- end}}
+                
+                {{- if $cg.deo_epilogue }}
+                  <div class="bg_info">
+                    <div class="heading" title="{{$path}}">Background Information</div>
+                    <div class="description">{{$cg.deo_epilogue.literal}}</div>
+                  </div>
+                {{- end}}
+                
+                {{- if $cg.content }}
+                  <div class="contents">
+                    <div class="heading" title="{{$path}}">Content</div>
+                    {{- template "content_list" $cg.content }}
+                  </div>
+                {{- end}}
+
+                {{- if $cg.asn_minorAlignment }}
+                  <div class="learning_progressions">
+                    <div class="heading" title="{{$path}}">Learning Progressions</div>
+                    {{- template "learning_progressions" $cg.asn_minorAlignment }}
+                  </div>
+                {{- end}}
+
+                <br/>
+              </li>
+            {{- end }}
+          </ul>
+        {{- end}}
+
+        {{- define "content_list"}}
+          <div class="content_list">
+            {{- range $contentKey, $content := . }}
+              <div class="content">
+                <span class="content_description">{{$content.dcterms_description.literal}}</span>
+                {{- if $content.asn_exactAlignment }}
+                  <a class="exact_alignment" href="{{$content.asn_exactAlignment.uri}}">({{$content.asn_exactAlignment.prefLabel}})</a>
+                {{- end}}
+                <ul class="intended_learnings">
+                  {{- range $ilKey, $il := $content.children }}
+                    <li class="intended_learning">
+                      <div>
+                        {{$il.text}}
+                        {{- template "skill_embodied" $il.dcterms_skillEmbodied }}
+                      </div>
+                      <ul>
+                        {{- range $abpKey, $abp := $il.children }}
+                          <li class="arrow_bullet_point">
+                            {{$abp.dcterms_description.literal}}
+                            {{- template "skill_embodied" $abp.dcterms_skillEmbodied }}
+                          </li>
+                        {{- end }}
+                      </ul>
+                    </li>
+                  {{- end }}
+                </ul>
+              </div>
+            {{- end }}
+          </div>
+        {{- end}}
+
+        {{- define "learning_progressions"}}
+          {{- range $_, $lp := . }}
+            <span><a href="{{$lp.uri}}">{{$lp.prefLabel}}</a>, </span>
+          {{- end}}
+        {{- end}}
+
+        {{- define "skill_embodied"}}
+          {{- if . }}
+            <span>
+              {{- range $se := . }}
+                {{- $imgsrc := printf "%s%s" "/images/" .imageFile }}
+                <a href="{{.uri}}" title="{{.prefLabel}}"><img src="{{$imgsrc}}" alt="{{.prefLabel}}"></a>
+              {{- end}}
+            </span>
+          {{- end}}
+        {{- end}}
+
+        {{- define "objectives"}}
+          <div class="objectives">
+            <h2>Objectives and Outcomes</h2>
+            {{- range $objKey, $obj := . }}
+              <br/>
+
+              <div class="objective">
+                <span class="objective_description">{{$obj.dcterms_title.literal}}: {{$obj.text}}</span>
+
+                  <ul class="outcomes">
+                    {{- range $outcomeKey, $outcome := $obj.children }}
+                      <li class="outcome">{{$outcome.text}}</li>
+                    {{- end}}
+                  </ul>
+
+              </div>
+            {{- end}}
+          </div>
+        {{- end}}
+
+        {{- define "kla"}}
+          {{- $val := . }}
+          <h1 class="kla_heading">{{$val.text}}</h1>
+          <hr/>
+          {{- template "syllabus" $val.children }}
+        {{- end}}
+
+
+      {{- template "kla" .JSON }}
+
+
+
     </main>
-    
+
     <!-- page-specific javascript -->
-    <script type="text/javascript" src="/{{ .FM.JsPath }}content.js"></script>
+    <!-- <script type="text/javascript" src="/{{ .FM.JsPath }}content.js"></script> -->
     <!--  -->
     <!-- add minimap navigator -->
     <!--  -->
     <canvas id="map" width="160px"></canvas>
 
-    <script src="/{{ .FM.JsPath }}pagemap.min.js"></script>
+    <script type="text/javascript" src="/{{ .FM.JsPath }}pagemap.min.js"></script>
     <script>
         pagemap(document.querySelector('#map'), {
-            styles: { 
+            styles: {
             // highlight minimap text outline
-            span: 'rgba(0,0,0,0.1)',
-            '.container > .children > .children > .dcterms_title > .literal': 'rgba(0,0,0,0.6)',
-            '.container > .children > .objectives > .children > .text p ': 'rgba(0,0,0,0.3)',
+            'span': 'rgba(0,0,0,0.1)',
+            '.container > .syllabus > .stages > .stage > .stage_title': 'rgba(0,0,0,0.6)',
+            '.container > .syllabus > .objectives > .objecitive > .objective_description': 'rgba(0,0,0,0.6)',
             'h2': 'rgba(0,0,0,0.8)'
             }
         });
