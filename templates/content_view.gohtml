@@ -127,11 +127,11 @@
         {{- define "content_groups"}}
           {{ $stg_title := .dcterms_title.literal }}
           <ul class="content_groups">
-            /* TODO: Template accepts only one variable parameter. Therefore, it is impossible
+            {{- /* TODO: Template accepts only one variable parameter. Therefore, it is impossible
                to pass stage title and content group node to another template, content_group.
                For the moment, the following code will remain here until Golang template gets
                the above capability.
-            */
+            */ -}}
             {{- range $cgKey, $cg := .children }}
               {{ $cg_heading := $cg.dcterms_title.literal }}
               <li class="content_group">
