@@ -1,6 +1,6 @@
-main {
+.container {
   margin: 3em auto 6em auto;
-  max-width: 900px;
+  max-width: 80%;
   line-height: 1.6em;
 }
 
@@ -48,22 +48,44 @@ main {
   font-size: 1.3em;
 }
 
-.container .syllabus .objectives .objective .objective_description {
+.container > .syllabus > .stages > .stage > .objectives {
+  padding: 0 1.5rem;
+}
+
+.container > .syllabus > .stages > .stage > .objectives > .heading {
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.container > .syllabus > .stages > .stage > .objectives > .objective > .objective_description {
   padding-top: 10px;
   padding-bottom: 10px;
   font-weight: bold;
   font-size: 1.3em;
 }
 
-.container > .syllabus > .objectives > .objective > .outcomes {
-  padding: 0px 60px;
+.container > .syllabus > .stages > .stage > .objectives > .objective > .outcomes {
+  padding: 0 1.5rem;
 }
 
-.container > .syllabus > .objectives > .objective > .outcomes > .outcome {
+.container > .syllabus > .stages > .stage > .objectives > .objective > .outcomes > .heading {
+  font-size: 1.3em;
+  color: cornflowerblue;
+}
+
+.container > .syllabus > .stages > .stage > .objectives > .objective > .outcomes > .body {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  border-color: cornflowerblue;
+}
+
+.container > .syllabus > .stages > .stage > .objectives > .objective > .outcomes .outcome {
   list-style-type: decimal-leading-zero;
+  margin: 0 1.4rem;
 }
 
-.container > .syllabus > .stages > .stage > .content_groups > .content_group {
+.container > .syllabus > .stages > .stage > .objectives > .objective > .content_groups > .content_group {
   padding: 0 1.5rem;
 }
 
@@ -71,6 +93,8 @@ main {
   > .syllabus
   > .stages
   > .stage
+  > .objectives
+  > .objective
   > .content_groups
   > .content_group
   > .content_group_heading {
@@ -82,6 +106,24 @@ main {
   > .syllabus
   > .stages
   > .stage
+  > .objectives
+  > .objective
+  > .content_groups
+  > .content_group
+  > .content_group_body {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  border-color: coral;
+  padding: 0 6px;
+}
+
+.container
+  > .syllabus
+  > .stages
+  > .stage
+  > .objectives
+  > .objective
   > .content_groups
   > .content_group
   .heading {
@@ -93,8 +135,11 @@ main {
   > .syllabus
   > .stages
   > .stage
+  > .objectives
+  > .objective
   > .content_groups
   > .content_group
+  > .content_group_body
   > .contents
   > .content_list
   > .content
@@ -107,8 +152,11 @@ main {
   > .syllabus
   > .stages
   > .stage
+  > .objectives
+  > .objective
   > .content_groups
   > .content_group
+  > .content_group_body
   > .contents
   > .content_list
   > .content
@@ -121,8 +169,11 @@ main {
   > .syllabus
   > .stages
   > .stage
+  > .objectives
+  > .objective
   > .content_groups
   > .content_group
+  > .content_group_body
   > .contents
   > .content_list
   > .content
@@ -134,8 +185,11 @@ main {
   > .syllabus
   > .stages
   > .stage
+  > .objectives
+  > .objective
   > .content_groups
   > .content_group
+  > .content_group_body
   > .contents
   > .content_list
   > .content
@@ -148,8 +202,11 @@ main {
   > .syllabus
   > .stages
   > .stage
+  > .objectives
+  > .objective
   > .content_groups
   > .content_group
+  > .content_group_body
   > .contents
   > .content_list
   > .content
@@ -164,8 +221,11 @@ main {
   > .syllabus
   > .stages
   > .stage
+  > .objectives
+  > .objective
   > .content_groups
   > .content_group
+  > .content_group_body
   > .contents
   > .content_list
   > .content
@@ -176,4 +236,3 @@ main {
   font-weight: bold;
   font-size: 1.2em;
 }
-
