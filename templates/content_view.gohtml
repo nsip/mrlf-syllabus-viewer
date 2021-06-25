@@ -152,7 +152,7 @@
           <div class="content_list">
             {{- range $contentKey, $content := . }}
               <div class="content">
-                <span class="content_description">{{$content.dcterms_description.literal}}</span>
+                <span class="content_description" title="{{$content.asn_statementLabel.literal}}">{{$content.dcterms_description.literal}}</span>
                 {{- if $content.asn_exactAlignment }}
                   {{- if $content.asn_exactAlignment.uri }}
                     <a class="exact_alignment" href="{{$content.asn_exactAlignment.uri}}">({{$content.asn_exactAlignment.prefLabel}})</a>
@@ -230,7 +230,7 @@
                     <div class="heading">Outcomes</div>
                     <ul class="body">
                       {{- range $outcomeKey, $outcome := $obj.outcome }}
-                        <li class="outcome">{{$outcome.text}}</li>
+                        <li class="outcome" title="{{$outcome.asn_statementLabel.literal}}">{{$outcome.text}}</li>
                       {{- end}}
                     </ul>
                   </div>
@@ -239,6 +239,8 @@
 
                   {{- if $obj.oer_forComponent.substrand }}
                     {{- template "substrand" $obj.oer_forComponent.substrand }}
+                  {{- else}}
+                    {{- template "content_groups" $obj.oer_forComponent }}
                   {{- end}}
               </div>
             {{- end}}
