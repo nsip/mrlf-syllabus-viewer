@@ -68,7 +68,7 @@
                 </div>
               {{- end}}
 
-              {{- template "stages" $syllabus.stage }}
+              {{- template "stages" $syllabus.children }}
 
             </div>
           {{- end}}
@@ -94,6 +94,14 @@
               <div class="statement">
                 <div class="heading">Statement</div>
                 <div class="description" >{{$stg.dcterms_description.literal}}</div>
+              </div>
+            {{- end}}
+            <br/>
+
+            {{- if $stg.oer_supportingMaterial }}
+              <div class="supportingMaterial">
+                <div class="heading">Supporting Material</div>
+                <div class="description" >{{$stg.oer_supportingMaterial.literal}}</div>
               </div>
             {{- end}}
             <br/>
@@ -161,7 +169,7 @@
                   {{- end}}
                 {{- end}}
                 <ul class="intended_learnings">
-                  {{- range $ilKey, $il := $content.content }}
+                  {{- range $ilKey, $il := $content.children }}
                     <li class="intended_learning">
                       <div>
                         {{$il.text}}
@@ -169,7 +177,7 @@
                         {{- template "lac" $il.dcterms_skillEmbodied }}
                       </div>
                       <ul>
-                        {{- range $abpKey, $abp := $il.content }}
+                        {{- range $abpKey, $abp := $il.children }}
                           <li class="arrow_bullet_point">
                             {{$abp.dcterms_description.literal}}
                             {{- template "lac" $il.dcterms_related }}
@@ -251,7 +259,7 @@
           {{- $val := . }}
           <h1 class="kla_heading">{{$val.text}}</h1>
           <hr/>
-          {{- template "syllabus" $val.syllabus }}
+          {{- template "syllabus" $val.children }}
         {{- end}}
 
       {{- template "kla" .JSON }}
