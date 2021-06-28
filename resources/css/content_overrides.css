@@ -48,6 +48,11 @@
   font-size: 1.3em;
 }
 
+.container > .syllabus > .stages > .stage > .supportingMaterial > .heading {
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
 .container > .syllabus > .stages > .stage > .objectives {
   padding: 0 1.5rem;
 }
@@ -57,35 +62,75 @@
   font-size: 1.3em;
 }
 
-.container > .syllabus > .stages > .stage > .objectives > .objective > .objective_description {
+.container
+  > .syllabus
+  > .stages
+  > .stage
+  > .objectives
+  > .objective
+  > .objective_description {
   padding-top: 10px;
   padding-bottom: 10px;
   font-weight: bold;
   font-size: 1.3em;
 }
 
-.container > .syllabus > .stages > .stage > .objectives > .objective > .outcomes {
+.container
+  > .syllabus
+  > .stages
+  > .stage
+  > .objectives
+  > .objective
+  > .outcomes {
   padding: 0 1.5rem;
 }
 
-.container > .syllabus > .stages > .stage > .objectives > .objective > .outcomes > .heading {
+.container
+  > .syllabus
+  > .stages
+  > .stage
+  > .objectives
+  > .objective
+  > .outcomes
+  > .heading {
   font-size: 1.3em;
   color: cornflowerblue;
 }
 
-.container > .syllabus > .stages > .stage > .objectives > .objective > .outcomes > .body {
+.container
+  > .syllabus
+  > .stages
+  > .stage
+  > .objectives
+  > .objective
+  > .outcomes
+  > .body {
   border-style: solid;
   border-width: 1px;
   border-radius: 10px;
   border-color: cornflowerblue;
 }
 
-.container > .syllabus > .stages > .stage > .objectives > .objective > .outcomes .outcome {
+.container
+  > .syllabus
+  > .stages
+  > .stage
+  > .objectives
+  > .objective
+  > .outcomes
+  .outcome {
   list-style-type: decimal-leading-zero;
   margin: 0 1.4rem;
 }
 
-.container > .syllabus > .stages > .stage > .objectives > .objective > .content_groups > .content_group {
+.container
+  > .syllabus
+  > .stages
+  > .stage
+  > .objectives
+  > .objective
+  > .content_groups
+  > .content_group {
   padding: 0 1.5rem;
 }
 
